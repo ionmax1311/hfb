@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" data-astro-cid-sckkx6r4>
+	<head>
+		<base href="https://ionmax1311.github.io/fantasy-en/" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta
+			name="description"
+			content="Learn how to play and win in HFB's online cricket games with our comprehensive game guide."
+		/>
+		<title>Game Guide - HFB</title>
+		<link rel="stylesheet" href="/css/app-perks.BAnrxveC.css" />
+		<style>
+			.hero[data-astro-cid-n52yixdx] {
+				height: 50vh;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				padding: 2rem;
+				overflow: hidden;
+				background-image: url(/images/bg.jpg);
+				background-size: cover;
+				background-position: center;
+			}
+			.hero-overlay[data-astro-cid-n52yixdx] {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(135deg, #0d0d2bd9, #9d00ffd9);
+			}
+			.hero-content[data-astro-cid-n52yixdx] {
+				position: relative;
+				z-index: 2;
+				max-width: 800px;
+			}
+			.hero[data-astro-cid-n52yixdx] h1[data-astro-cid-n52yixdx] {
+				font-family: Orbitron, sans-serif;
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				margin-bottom: 1rem;
+				color: #fff;
+				text-shadow: 0 0 20px rgba(158, 0, 255, 0.5);
+			}
+			.hero[data-astro-cid-n52yixdx] p[data-astro-cid-n52yixdx] {
+				font-size: clamp(1.1rem, 2vw, 1.5rem);
+				margin-bottom: 2rem;
+				color: #fff;
+			}
+			.container[data-astro-cid-n52yixdx] {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 1rem;
+			}
+			.guide[data-astro-cid-n52yixdx] {
+				padding: 6rem 0;
+				background: var(--color-navy);
+				position: relative;
+				overflow: hidden;
+			}
+			.guide[data-astro-cid-n52yixdx]:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: radial-gradient(
+					circle at 50% 50%,
+					rgba(162, 255, 0, 0.1) 0%,
+					transparent 60%
+				);
+				pointer-events: none;
+			}
+			.guide-grid[data-astro-cid-n52yixdx] {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 2rem;
+			}
+			.guide-card[data-astro-cid-n52yixdx] {
+				background: #ffffff08;
+				border-radius: 24px;
+				padding: 2.5rem;
+				border: 1px solid rgba(162, 255, 0, 0.1);
+				transition: all 0.3s ease;
+			}
+			.guide-card[data-astro-cid-n52yixdx]:hover {
+				transform: translateY(-10px);
+				border-color: #a2ff0033;
+				box-shadow: 0 10px 30px #a2ff000d;
+			}
+			.guide-card[data-astro-cid-n52yixdx] h3[data-astro-cid-n52yixdx] {
+				font-family: Orbitron, sans-serif;
+				font-size: 1.75rem;
+				color: var(--color-lime);
+				margin-bottom: 2rem;
+				text-align: center;
+			}
+			.guide-content[data-astro-cid-n52yixdx] {
+				display: grid;
+				gap: 2rem;
+			}
+			.guide-content[data-astro-cid-n52yixdx]
+				h4[data-astro-cid-n52yixdx] {
+				font-family: Rajdhani, sans-serif;
+				font-size: 1.25rem;
+				color: #fff;
+				margin-bottom: 0.75rem;
+			}
+			.guide-content[data-astro-cid-n52yixdx] p[data-astro-cid-n52yixdx] {
+				color: #ffffffb3;
+				line-height: 1.6;
+			}
+			.disclaimer[data-astro-cid-n52yixdx] {
+				background: linear-gradient(
+					135deg,
+					#800020,
+					var(--color-purple)
+				);
+				padding: 40px 0;
+			}
+			.disclaimer-content[data-astro-cid-n52yixdx] {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+			.disclaimer[data-astro-cid-n52yixdx] h2[data-astro-cid-n52yixdx] {
+				font-family: Orbitron, sans-serif;
+				margin-bottom: 1.5rem;
+				color: #fff;
+			}
+			.disclaimer[data-astro-cid-n52yixdx] p[data-astro-cid-n52yixdx] {
+				margin-bottom: 1rem;
+				line-height: 1.6;
+			}
+			.disclaimer[data-astro-cid-n52yixdx]
+				strong[data-astro-cid-n52yixdx] {
+				color: var(--color-lime);
+			}
+			.disclaimer[data-astro-cid-n52yixdx] a[data-astro-cid-n52yixdx] {
+				color: #fff;
+				text-decoration: underline;
+			}
+			@media (max-width: 1024px) {
+				.guide-grid[data-astro-cid-n52yixdx] {
+					grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				}
+			}
+			@media (max-width: 768px) {
+				.guide-card[data-astro-cid-n52yixdx] {
+					padding: 2rem;
+				}
+				.guide-card[data-astro-cid-n52yixdx]
+					h3[data-astro-cid-n52yixdx] {
+					font-size: 1.5rem;
+					margin-bottom: 1.5rem;
+				}
+				.guide-content[data-astro-cid-n52yixdx] {
+					gap: 1.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body data-astro-cid-sckkx6r4>
+		<div class="mobile-menu" id="mobileMenu" data-astro-cid-sckkx6r4>
+			<button class="close-button" id="closeMenu" data-astro-cid-sckkx6r4>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					data-astro-cid-sckkx6r4
+				>
+					<path
+						d="M18 6L6 18"
+						stroke="#A2FF00"
+						stroke-width="2"
+						stroke-linecap="round"
+						data-astro-cid-sckkx6r4
+					></path>
+					<path
+						d="M6 6L18 18"
+						stroke="#A2FF00"
+						stroke-width="2"
+						stroke-linecap="round"
+						data-astro-cid-sckkx6r4
+					></path>
+				</svg>
+			</button>
+			<nav class="mobile-nav" data-astro-cid-sckkx6r4>
+				<a href="/" data-astro-cid-sckkx6r4>Home</a>
+				<a href="/app-perks" data-astro-cid-sckkx6r4>App Perks</a>
+				<a href="/game-guide" data-astro-cid-sckkx6r4>Game Guide</a>
+				<a href="/scoring" data-astro-cid-sckkx6r4>Scoring</a>
+				<a
+					href="/contact"
+					class="contact-button"
+					data-astro-cid-sckkx6r4
+					>Contact Us</a
+				>
+			</nav>
+		</div>
+		<header data-astro-cid-sckkx6r4>
+			<div class="header-content" data-astro-cid-sckkx6r4>
+				<div class="logo-container" data-astro-cid-sckkx6r4>
+					<svg
+						width="40"
+						height="40"
+						viewBox="0 0 40 40"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						data-astro-cid-sckkx6r4
+					>
+						<path
+							d="M20 2L4 10V30L20 38L36 30V10L20 2Z"
+							stroke="#A2FF00"
+							stroke-width="2"
+							data-astro-cid-sckkx6r4
+						></path>
+						<text
+							x="50%"
+							y="50%"
+							dominant-baseline="middle"
+							text-anchor="middle"
+							fill="#A2FF00"
+							font-family="Orbitron"
+							font-size="14"
+							data-astro-cid-sckkx6r4
+						>
+							HFB
+						</text>
+					</svg>
+					<span class="site-name" data-astro-cid-sckkx6r4
+						>hfb.com</span
+					>
+				</div>
+				<nav class="desktop-nav" data-astro-cid-sckkx6r4>
+					<a href="/" data-astro-cid-sckkx6r4>Home</a>
+					<a href="/app-perks" data-astro-cid-sckkx6r4>App Perks</a>
+					<a href="/game-guide" data-astro-cid-sckkx6r4>Game Guide</a>
+					<a href="/scoring" data-astro-cid-sckkx6r4>Scoring</a>
+					<a
+						href="/contact"
+						class="contact-button"
+						data-astro-cid-sckkx6r4
+						>Contact Us</a
+					>
+				</nav>
+				<button
+					class="menu-toggle"
+					id="menuToggle"
+					data-astro-cid-sckkx6r4
+				>
+					<span data-astro-cid-sckkx6r4></span>
+					<span data-astro-cid-sckkx6r4></span>
+					<span data-astro-cid-sckkx6r4></span>
+				</button>
+			</div>
+		</header>
+		<main data-astro-cid-sckkx6r4>
+			<section class="hero" data-astro-cid-n52yixdx>
+				<div class="hero-overlay" data-astro-cid-n52yixdx></div>
+				<div class="hero-content" data-astro-cid-n52yixdx>
+					<h1 data-astro-cid-n52yixdx>Game Guide</h1>
+					<p data-astro-cid-n52yixdx>
+						Master the game with our comprehensive guide
+					</p>
+				</div>
+			</section>
+			<section class="guide" data-astro-cid-n52yixdx>
+				<div class="container" data-astro-cid-n52yixdx>
+					<div class="guide-grid" data-astro-cid-n52yixdx>
+						<div class="guide-card" data-astro-cid-n52yixdx>
+							<h3 data-astro-cid-n52yixdx>Getting Started</h3>
+							<div class="guide-content" data-astro-cid-n52yixdx>
+								<h4 data-astro-cid-n52yixdx>
+									1. Create Your Account
+								</h4>
+								<p data-astro-cid-n52yixdx>
+									Sign up with your email and verify your
+									account
+								</p>
+								<h4 data-astro-cid-n52yixdx>2. Add Funds</h4>
+								<p data-astro-cid-n52yixdx>
+									Deposit money to join cash contests and win
+									real prizes
+								</p>
+								<h4 data-astro-cid-n52yixdx>
+									3. Join a Contest
+								</h4>
+								<p data-astro-cid-n52yixdx>
+									Choose from various contests with different
+									entry fees
+								</p>
+							</div>
+						</div>
+						<div class="guide-card" data-astro-cid-n52yixdx>
+							<h3 data-astro-cid-n52yixdx>Team Selection</h3>
+							<div class="guide-content" data-astro-cid-n52yixdx>
+								<h4 data-astro-cid-n52yixdx>1. Pick Players</h4>
+								<p data-astro-cid-n52yixdx>
+									Select 11 players within the given credit
+									limit
+								</p>
+								<h4 data-astro-cid-n52yixdx>
+									2. Choose Captain
+								</h4>
+								<p data-astro-cid-n52yixdx>
+									Your captain earns 2x points
+								</p>
+								<h4 data-astro-cid-n52yixdx>
+									3. Select Vice-Captain
+								</h4>
+								<p data-astro-cid-n52yixdx>
+									Vice-captain gets 1.5x points
+								</p>
+							</div>
+						</div>
+						<div class="guide-card" data-astro-cid-n52yixdx>
+							<h3 data-astro-cid-n52yixdx>Strategy Tips</h3>
+							<div class="guide-content" data-astro-cid-n52yixdx>
+								<h4 data-astro-cid-n52yixdx>Research</h4>
+								<p data-astro-cid-n52yixdx>
+									Analyze player form and pitch conditions
+								</p>
+								<h4 data-astro-cid-n52yixdx>Balance Team</h4>
+								<p data-astro-cid-n52yixdx>
+									Mix experienced players with in-form talents
+								</p>
+								<h4 data-astro-cid-n52yixdx>Follow News</h4>
+								<p data-astro-cid-n52yixdx>
+									Stay updated with team changes and weather
+								</p>
+							</div>
+						</div>
+						<div class="guide-card" data-astro-cid-n52yixdx>
+							<h3 data-astro-cid-n52yixdx>Tournament Rules</h3>
+							<div class="guide-content" data-astro-cid-n52yixdx>
+								<h4 data-astro-cid-n52yixdx>
+									Entry Requirements
+								</h4>
+								<p data-astro-cid-n52yixdx>
+									Minimum age 18+ and valid ID verification
+								</p>
+								<h4 data-astro-cid-n52yixdx>Fair Play</h4>
+								<p data-astro-cid-n52yixdx>
+									Multiple accounts and collusion prohibited
+								</p>
+								<h4 data-astro-cid-n52yixdx>Payouts</h4>
+								<p data-astro-cid-n52yixdx>
+									Winnings processed within 24 hours
+								</p>
+							</div>
+						</div>
+						<div class="guide-card" data-astro-cid-n52yixdx>
+							<h3 data-astro-cid-n52yixdx>Scoring System</h3>
+							<div class="guide-content" data-astro-cid-n52yixdx>
+								<h4 data-astro-cid-n52yixdx>Batting Points</h4>
+								<p data-astro-cid-n52yixdx>
+									Run = 1pt, Boundary = 1 bonus, Six = 2 bonus
+								</p>
+								<h4 data-astro-cid-n52yixdx>Bowling Points</h4>
+								<p data-astro-cid-n52yixdx>
+									Wicket = 25pts, Maiden = 8pts
+								</p>
+								<h4 data-astro-cid-n52yixdx>Fielding Points</h4>
+								<p data-astro-cid-n52yixdx>
+									Catch = 8pts, Run-out = 12pts
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="disclaimer" data-astro-cid-n52yixdx>
+				<div class="disclaimer-content" data-astro-cid-n52yixdx>
+					<h2 data-astro-cid-n52yixdx>🚨 Disclaimer 18+</h2>
+					<p data-astro-cid-n52yixdx>
+						Online cricket games offer a faster alternative to
+						traditional matches. You don't have to spend time
+						traveling to a stadium, preparing the pitch or waiting
+						for your turn. Play anytime, anywhere, at your
+						convenience. However, daily fantasy sports are banned in
+						some states of India, such as
+						<strong data-astro-cid-n52yixdx
+							>Andhra Pradesh, Assam, Nagaland, Orissa, Sikkim and
+							Telangana</strong
+						>.
+					</p>
+					<p data-astro-cid-n52yixdx>
+						<strong data-astro-cid-n52yixdx
+							>All Rights Reserved</strong
+						><br data-astro-cid-n52yixdx />
+						hfb is operated under the ownership of hfb.com, a
+						company registered in India.<br
+							data-astro-cid-n52yixdx
+						/>
+						For any further assistance or queries, please contact us
+						via email at
+						<a href="mailto:support@hfb.com" data-astro-cid-n52yixdx
+							>support@hfb.com</a
+						>.
+					</p>
+				</div>
+			</div>
+		</main>
+		<footer data-astro-cid-sckkx6r4>
+			<div class="footer-content" data-astro-cid-sckkx6r4>
+				<div class="footer-main" data-astro-cid-sckkx6r4>
+					<div class="footer-logo" data-astro-cid-sckkx6r4>
+						<div class="logo-container" data-astro-cid-sckkx6r4>
+							<svg
+								width="40"
+								height="40"
+								viewBox="0 0 40 40"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								data-astro-cid-sckkx6r4
+							>
+								<path
+									d="M20 2L4 10V30L20 38L36 30V10L20 2Z"
+									stroke="#A2FF00"
+									stroke-width="2"
+									data-astro-cid-sckkx6r4
+								></path>
+								<text
+									x="50%"
+									y="50%"
+									dominant-baseline="middle"
+									text-anchor="middle"
+									fill="#A2FF00"
+									font-family="Orbitron"
+									font-size="14"
+									data-astro-cid-sckkx6r4
+								>
+									HFB
+								</text>
+							</svg>
+							<span
+								class="footer-site-name"
+								data-astro-cid-sckkx6r4
+								>hfb.com</span
+							>
+						</div>
+						<p class="footer-description" data-astro-cid-sckkx6r4>
+							Experience the ultimate fantasy cricket gaming
+							platform. Create your dream team, compete with
+							players worldwide, and win exciting rewards.
+						</p>
+					</div>
+					<div class="footer-links" data-astro-cid-sckkx6r4>
+						<div class="footer-column" data-astro-cid-sckkx6r4>
+							<h3 data-astro-cid-sckkx6r4>Quick Links</h3>
+							<a href="/" data-astro-cid-sckkx6r4>Home</a>
+							<a href="/app-perks" data-astro-cid-sckkx6r4
+								>App Perks</a
+							>
+							<a href="/game-guide" data-astro-cid-sckkx6r4
+								>Game Guide</a
+							>
+							<a href="/scoring" data-astro-cid-sckkx6r4
+								>Scoring</a
+							>
+						</div>
+						<div class="footer-column" data-astro-cid-sckkx6r4>
+							<h3 data-astro-cid-sckkx6r4>Legal</h3>
+							<a href="/terms" data-astro-cid-sckkx6r4
+								>Terms and Conditions</a
+							>
+							<a href="/privacy" data-astro-cid-sckkx6r4
+								>Privacy Policy</a
+							>
+							<a href="/cookies" data-astro-cid-sckkx6r4
+								>Cookie Policy</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom" data-astro-cid-sckkx6r4>
+					<p class="copyright" data-astro-cid-sckkx6r4>
+						© 2024 hfb.com. All rights reserved.
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script type="module">
+			const t = document.getElementById("menuToggle"),
+				e = document.getElementById("mobileMenu"),
+				n = document.getElementById("closeMenu");
+			t?.addEventListener("click", () => {
+				e?.classList.toggle("active"),
+					(document.body.style.overflow = e?.classList.contains(
+						"active",
+					)
+						? "hidden"
+						: "");
+			});
+			n?.addEventListener("click", () => {
+				e?.classList.remove("active"),
+					(document.body.style.overflow = "");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" data-astro-cid-sckkx6r4>
+	<head>
+		<base href="https://ionmax1311.github.io/fantasy-en/" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta
+			name="description"
+			content="Learn about the scoring system and point calculation in HFB's online cricket games."
+		/>
+		<title>Scoring System - HFB</title>
+		<link rel="stylesheet" href="/css/app-perks.BAnrxveC.css" />
+		<style>
+			.hero[data-astro-cid-5j26wxc7] {
+				height: 50vh;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				padding: 2rem;
+				overflow: hidden;
+				background-image: url(/images/bg6.jpg);
+				background-size: cover;
+				background-position: center;
+			}
+			.hero-overlay[data-astro-cid-5j26wxc7] {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(135deg, #0d0d2bd9, #9d00ffd9);
+			}
+			.hero-content[data-astro-cid-5j26wxc7] {
+				position: relative;
+				z-index: 2;
+				max-width: 800px;
+			}
+			.hero[data-astro-cid-5j26wxc7] h1[data-astro-cid-5j26wxc7] {
+				font-family: Orbitron, sans-serif;
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				margin-bottom: 1rem;
+				color: #fff;
+				text-shadow: 0 0 20px rgba(158, 0, 255, 0.5);
+			}
+			.hero[data-astro-cid-5j26wxc7] p[data-astro-cid-5j26wxc7] {
+				font-size: clamp(1.1rem, 2vw, 1.5rem);
+				margin-bottom: 2rem;
+				color: #fff;
+			}
+			.container[data-astro-cid-5j26wxc7] {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 1rem;
+			}
+			.scoring[data-astro-cid-5j26wxc7] {
+				padding: 6rem 0;
+				background: var(--color-navy);
+				position: relative;
+				overflow: hidden;
+			}
+			.scoring[data-astro-cid-5j26wxc7]:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: radial-gradient(
+					circle at 50% 50%,
+					rgba(162, 255, 0, 0.1) 0%,
+					transparent 60%
+				);
+				pointer-events: none;
+			}
+			.scoring-grid[data-astro-cid-5j26wxc7] {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 2rem;
+			}
+			.scoring-card[data-astro-cid-5j26wxc7] {
+				background: #ffffff08;
+				border-radius: 24px;
+				padding: 2rem;
+				transition: all 0.3s ease;
+				border: 1px solid rgba(162, 255, 0, 0.1);
+			}
+			.scoring-card[data-astro-cid-5j26wxc7]:hover {
+				transform: translateY(-10px);
+				border-color: #a2ff0033;
+				box-shadow: 0 10px 30px #a2ff000d;
+			}
+			.scoring-card[data-astro-cid-5j26wxc7] h3[data-astro-cid-5j26wxc7] {
+				font-family: Orbitron, sans-serif;
+				font-size: 1.5rem;
+				margin-bottom: 1.5rem;
+				color: var(--color-lime);
+				text-align: center;
+			}
+			.points-list[data-astro-cid-5j26wxc7] {
+				display: grid;
+				gap: 1rem;
+			}
+			.point-item[data-astro-cid-5j26wxc7] {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0.75rem;
+				background: #ffffff08;
+				border-radius: 8px;
+				transition: background 0.3s ease;
+			}
+			.point-item[data-astro-cid-5j26wxc7]:hover {
+				background: #ffffff0d;
+			}
+			.action[data-astro-cid-5j26wxc7] {
+				color: #fff;
+				font-family: Rajdhani, sans-serif;
+				font-size: 1.1rem;
+			}
+			.points[data-astro-cid-5j26wxc7] {
+				color: var(--color-lime);
+				font-family: Orbitron, sans-serif;
+				font-size: 1.1rem;
+			}
+			.disclaimer[data-astro-cid-5j26wxc7] {
+				background: linear-gradient(
+					135deg,
+					#800020,
+					var(--color-purple)
+				);
+				padding: 40px 0;
+			}
+			.disclaimer-content[data-astro-cid-5j26wxc7] {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+			.disclaimer[data-astro-cid-5j26wxc7] h2[data-astro-cid-5j26wxc7] {
+				font-family: Orbitron, sans-serif;
+				margin-bottom: 1.5rem;
+				color: #fff;
+			}
+			.disclaimer[data-astro-cid-5j26wxc7] p[data-astro-cid-5j26wxc7] {
+				margin-bottom: 1rem;
+				line-height: 1.6;
+			}
+			.disclaimer[data-astro-cid-5j26wxc7]
+				strong[data-astro-cid-5j26wxc7] {
+				color: var(--color-lime);
+			}
+			.disclaimer[data-astro-cid-5j26wxc7] a[data-astro-cid-5j26wxc7] {
+				color: #fff;
+				text-decoration: underline;
+			}
+			@media (max-width: 768px) {
+				.scoring-card[data-astro-cid-5j26wxc7] {
+					padding: 1.5rem;
+				}
+				.scoring-card[data-astro-cid-5j26wxc7]
+					h3[data-astro-cid-5j26wxc7] {
+					font-size: 1.25rem;
+					margin-bottom: 1.25rem;
+				}
+				.point-item[data-astro-cid-5j26wxc7] {
+					padding: 0.5rem;
+				}
+				.action[data-astro-cid-5j26wxc7],
+				.points[data-astro-cid-5j26wxc7] {
+					font-size: 1rem;
+				}
+			}
+		</style>
+	</head>
+	<body data-astro-cid-sckkx6r4>
+		<div class="mobile-menu" id="mobileMenu" data-astro-cid-sckkx6r4>
+			<button class="close-button" id="closeMenu" data-astro-cid-sckkx6r4>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					data-astro-cid-sckkx6r4
+				>
+					<path
+						d="M18 6L6 18"
+						stroke="#A2FF00"
+						stroke-width="2"
+						stroke-linecap="round"
+						data-astro-cid-sckkx6r4
+					></path>
+					<path
+						d="M6 6L18 18"
+						stroke="#A2FF00"
+						stroke-width="2"
+						stroke-linecap="round"
+						data-astro-cid-sckkx6r4
+					></path>
+				</svg>
+			</button>
+			<nav class="mobile-nav" data-astro-cid-sckkx6r4>
+				<a href="/" data-astro-cid-sckkx6r4>Home</a>
+				<a href="/app-perks" data-astro-cid-sckkx6r4>App Perks</a>
+				<a href="/game-guide" data-astro-cid-sckkx6r4>Game Guide</a>
+				<a href="/scoring" data-astro-cid-sckkx6r4>Scoring</a>
+				<a
+					href="/contact"
+					class="contact-button"
+					data-astro-cid-sckkx6r4
+					>Contact Us</a
+				>
+			</nav>
+		</div>
+		<header data-astro-cid-sckkx6r4>
+			<div class="header-content" data-astro-cid-sckkx6r4>
+				<div class="logo-container" data-astro-cid-sckkx6r4>
+					<svg
+						width="40"
+						height="40"
+						viewBox="0 0 40 40"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						data-astro-cid-sckkx6r4
+					>
+						<path
+							d="M20 2L4 10V30L20 38L36 30V10L20 2Z"
+							stroke="#A2FF00"
+							stroke-width="2"
+							data-astro-cid-sckkx6r4
+						></path>
+						<text
+							x="50%"
+							y="50%"
+							dominant-baseline="middle"
+							text-anchor="middle"
+							fill="#A2FF00"
+							font-family="Orbitron"
+							font-size="14"
+							data-astro-cid-sckkx6r4
+						>
+							HFB
+						</text>
+					</svg>
+					<span class="site-name" data-astro-cid-sckkx6r4
+						>hfb.com</span
+					>
+				</div>
+				<nav class="desktop-nav" data-astro-cid-sckkx6r4>
+					<a href="/" data-astro-cid-sckkx6r4>Home</a>
+					<a href="/app-perks" data-astro-cid-sckkx6r4>App Perks</a>
+					<a href="/game-guide" data-astro-cid-sckkx6r4>Game Guide</a>
+					<a href="/scoring" data-astro-cid-sckkx6r4>Scoring</a>
+					<a
+						href="/contact"
+						class="contact-button"
+						data-astro-cid-sckkx6r4
+						>Contact Us</a
+					>
+				</nav>
+				<button
+					class="menu-toggle"
+					id="menuToggle"
+					data-astro-cid-sckkx6r4
+				>
+					<span data-astro-cid-sckkx6r4></span>
+					<span data-astro-cid-sckkx6r4></span>
+					<span data-astro-cid-sckkx6r4></span>
+				</button>
+			</div>
+		</header>
+		<main data-astro-cid-sckkx6r4>
+			<section class="hero" data-astro-cid-5j26wxc7>
+				<div class="hero-overlay" data-astro-cid-5j26wxc7></div>
+				<div class="hero-content" data-astro-cid-5j26wxc7>
+					<h1 data-astro-cid-5j26wxc7>Scoring System</h1>
+					<p data-astro-cid-5j26wxc7>
+						Understanding how points are calculated
+					</p>
+				</div>
+			</section>
+			<section class="scoring" data-astro-cid-5j26wxc7>
+				<div class="container" data-astro-cid-5j26wxc7>
+					<div class="scoring-grid" data-astro-cid-5j26wxc7>
+						<div class="scoring-card" data-astro-cid-5j26wxc7>
+							<h3 data-astro-cid-5j26wxc7>Batting Points</h3>
+							<div class="points-list" data-astro-cid-5j26wxc7>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Run Scored</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>1</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Boundary Bonus</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>1</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Six Bonus</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>2</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Half Century</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>8</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Century</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>16</span
+									>
+								</div>
+							</div>
+						</div>
+						<div class="scoring-card" data-astro-cid-5j26wxc7>
+							<h3 data-astro-cid-5j26wxc7>Bowling Points</h3>
+							<div class="points-list" data-astro-cid-5j26wxc7>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Wicket</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>25</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Maiden Over</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>8</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>3 Wicket Bonus</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>4</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>4 Wicket Bonus</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>8</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>5 Wicket Bonus</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>16</span
+									>
+								</div>
+							</div>
+						</div>
+						<div class="scoring-card" data-astro-cid-5j26wxc7>
+							<h3 data-astro-cid-5j26wxc7>Fielding Points</h3>
+							<div class="points-list" data-astro-cid-5j26wxc7>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Catch</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>8</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Stumping</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>12</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Run Out</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>12</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Direct Hit Bonus</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>4</span
+									>
+								</div>
+							</div>
+						</div>
+						<div class="scoring-card" data-astro-cid-5j26wxc7>
+							<h3 data-astro-cid-5j26wxc7>Bonus Points</h3>
+							<div class="points-list" data-astro-cid-5j26wxc7>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Man of the Match</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>25</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Strike Rate > 200</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>10</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Economy Rate < 4</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>10</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Hat-trick</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>30</span
+									>
+								</div>
+							</div>
+						</div>
+						<div class="scoring-card" data-astro-cid-5j26wxc7>
+							<h3 data-astro-cid-5j26wxc7>Penalty Points</h3>
+							<div class="points-list" data-astro-cid-5j26wxc7>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Duck Out</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>-2</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Economy Rate > 12</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>-4</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Strike Rate < 50</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>-2</span
+									>
+								</div>
+								<div class="point-item" data-astro-cid-5j26wxc7>
+									<span class="action" data-astro-cid-5j26wxc7
+										>Dropped Catch</span
+									>
+									<span class="points" data-astro-cid-5j26wxc7
+										>-2</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="disclaimer" data-astro-cid-5j26wxc7>
+				<div class="disclaimer-content" data-astro-cid-5j26wxc7>
+					<h2 data-astro-cid-5j26wxc7>🚨 Disclaimer 18+</h2>
+					<p data-astro-cid-5j26wxc7>
+						Online cricket games offer a faster alternative to
+						traditional matches. You don't have to spend time
+						traveling to a stadium, preparing the pitch or waiting
+						for your turn. Play anytime, anywhere, at your
+						convenience. However, daily fantasy sports are banned in
+						some states of India, such as
+						<strong data-astro-cid-5j26wxc7
+							>Andhra Pradesh, Assam, Nagaland, Orissa, Sikkim and
+							Telangana</strong
+						>.
+					</p>
+					<p data-astro-cid-5j26wxc7>
+						<strong data-astro-cid-5j26wxc7
+							>All Rights Reserved</strong
+						><br data-astro-cid-5j26wxc7 />
+						hfb is operated under the ownership of hfb.com, a
+						company registered in India.<br
+							data-astro-cid-5j26wxc7
+						/>
+						For any further assistance or queries, please contact us
+						via email at
+						<a href="mailto:support@hfb.com" data-astro-cid-5j26wxc7
+							>support@hfb.com</a
+						>.
+					</p>
+				</div>
+			</div>
+		</main>
+		<footer data-astro-cid-sckkx6r4>
+			<div class="footer-content" data-astro-cid-sckkx6r4>
+				<div class="footer-main" data-astro-cid-sckkx6r4>
+					<div class="footer-logo" data-astro-cid-sckkx6r4>
+						<div class="logo-container" data-astro-cid-sckkx6r4>
+							<svg
+								width="40"
+								height="40"
+								viewBox="0 0 40 40"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								data-astro-cid-sckkx6r4
+							>
+								<path
+									d="M20 2L4 10V30L20 38L36 30V10L20 2Z"
+									stroke="#A2FF00"
+									stroke-width="2"
+									data-astro-cid-sckkx6r4
+								></path>
+								<text
+									x="50%"
+									y="50%"
+									dominant-baseline="middle"
+									text-anchor="middle"
+									fill="#A2FF00"
+									font-family="Orbitron"
+									font-size="14"
+									data-astro-cid-sckkx6r4
+								>
+									HFB
+								</text>
+							</svg>
+							<span
+								class="footer-site-name"
+								data-astro-cid-sckkx6r4
+								>hfb.com</span
+							>
+						</div>
+						<p class="footer-description" data-astro-cid-sckkx6r4>
+							Experience the ultimate fantasy cricket gaming
+							platform. Create your dream team, compete with
+							players worldwide, and win exciting rewards.
+						</p>
+					</div>
+					<div class="footer-links" data-astro-cid-sckkx6r4>
+						<div class="footer-column" data-astro-cid-sckkx6r4>
+							<h3 data-astro-cid-sckkx6r4>Quick Links</h3>
+							<a href="/" data-astro-cid-sckkx6r4>Home</a>
+							<a href="/app-perks" data-astro-cid-sckkx6r4
+								>App Perks</a
+							>
+							<a href="/game-guide" data-astro-cid-sckkx6r4
+								>Game Guide</a
+							>
+							<a href="/scoring" data-astro-cid-sckkx6r4
+								>Scoring</a
+							>
+						</div>
+						<div class="footer-column" data-astro-cid-sckkx6r4>
+							<h3 data-astro-cid-sckkx6r4>Legal</h3>
+							<a href="/terms" data-astro-cid-sckkx6r4
+								>Terms and Conditions</a
+							>
+							<a href="/privacy" data-astro-cid-sckkx6r4
+								>Privacy Policy</a
+							>
+							<a href="/cookies" data-astro-cid-sckkx6r4
+								>Cookie Policy</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom" data-astro-cid-sckkx6r4>
+					<p class="copyright" data-astro-cid-sckkx6r4>
+						© 2024 hfb.com. All rights reserved.
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script type="module">
+			const t = document.getElementById("menuToggle"),
+				e = document.getElementById("mobileMenu"),
+				n = document.getElementById("closeMenu");
+			t?.addEventListener("click", () => {
+				e?.classList.toggle("active"),
+					(document.body.style.overflow = e?.classList.contains(
+						"active",
+					)
+						? "hidden"
+						: "");
+			});
+			n?.addEventListener("click", () => {
+				e?.classList.remove("active"),
+					(document.body.style.overflow = "");
+			});
+		</script>
+	</body>
+</html>
